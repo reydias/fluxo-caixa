@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluxoCaixa.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5f26afe7baca3a1e1f8ad21f00cd4370ec25174")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f2d2930574e09da9557d4a1dd5b9cb97197c18d")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluxoCaixa.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluxoCaixa.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
