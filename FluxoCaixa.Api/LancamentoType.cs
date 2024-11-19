@@ -4,5 +4,6 @@ namespace FluxoCaixa.Api
 {
     public class LancamentoType : ObjectType<Lancamento>
     {
+
     }
 }

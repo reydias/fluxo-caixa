@@ -14,7 +14,7 @@ namespace FluxoCaixa.Data
         }
 
         public async Task<IEnumerable<Lancamento>> GetAllAsync()
-            => await _context.Lancamentos.ToListAsync();
+            => await _context.Lancamentos.AsNoTracking().ToListAsync();
 
         public async Task AddAsync(Lancamento lancamento)
         {
@@ -29,9 +29,9 @@ namespace FluxoCaixa.Data
                 .Select(g => new ConsolidadoDiario
                 {
                     Data = g.Key,
-                    Saldo = g.Sum(l => l.Tipo == "crédito" ? l.Valor : -l.Valor)
+                    Saldo = g.Sum(l => l.Tipo == "C" ? l.Valor : -l.Valor)
                 })
-                .ToListAsync();
+                .AsNoTracking().ToListAsync();
         }
     }
 

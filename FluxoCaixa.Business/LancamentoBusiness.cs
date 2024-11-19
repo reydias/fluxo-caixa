@@ -17,7 +17,10 @@ namespace FluxoCaixa.Business
 
         public async Task<Lancamento> AddLancamentoAsync(Lancamento lancamento)
         {
-            lancamento.Id = Guid.NewGuid();
+            if (lancamento.Id == Guid.Empty)
+            {
+                lancamento.Id = Guid.NewGuid();
+            }
             await _repository.AddAsync(lancamento);
             return lancamento;
         }

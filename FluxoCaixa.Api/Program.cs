@@ -2,13 +2,14 @@ using FluxoCaixa.Api;
 using FluxoCaixa.Data;
 using FluxoCaixa.Business;
 using Microsoft.EntityFrameworkCore;
+using HotChocolate.Execution;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configurações do serviço
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<LancamentoRepository>();
 builder.Services.AddScoped<ILancamentoBusiness, LancamentoBusiness>();
@@ -18,7 +19,11 @@ builder.Services
     .AddQueryType<LancamentoQuery>()
     .AddMutationType<LancamentoMutation>()
     .AddType<LancamentoType>()
-    .AddType<ConsolidadoDiarioType>();
+    .AddType<ConsolidadoDiarioType>()
+    .ModifyOptions(options =>
+    {
+        options.DefaultResolverStrategy = ExecutionStrategy.Serial;
+    });
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -12,9 +12,17 @@ namespace FluxoCaixa.Api
             _lancamentoBusiness = lancamentoBusiness;
         }
 
-        public async Task<Lancamento> AddLancamento(Lancamento input)
+        public async Task<Lancamento> AddLancamento(LancamentoInput input)
         {
-            return await _lancamentoBusiness.AddLancamentoAsync(input);
+            var novoLancamento = new Lancamento
+            {
+                Id = Guid.NewGuid(),
+                Tipo = input.Tipo,
+                Valor = input.Valor,
+                Data = input.Data,
+                Descricao = input.Descricao
+            };
+            return await _lancamentoBusiness.AddLancamentoAsync(novoLancamento);
         }
     }
 }

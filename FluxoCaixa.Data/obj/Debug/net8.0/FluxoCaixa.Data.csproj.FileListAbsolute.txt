@@ -14,3 +14,5 @@ C:\gitRey\fluxo-caixa\FluxoCaixa.Data\obj\Debug\net8.0\FluxoCaixa.Data.dll
 C:\gitRey\fluxo-caixa\FluxoCaixa.Data\obj\Debug\net8.0\refint\FluxoCaixa.Data.dll
 C:\gitRey\fluxo-caixa\FluxoCaixa.Data\obj\Debug\net8.0\FluxoCaixa.Data.pdb
 C:\gitRey\fluxo-caixa\FluxoCaixa.Data\obj\Debug\net8.0\ref\FluxoCaixa.Data.dll
+C:\gitRey\fluxo-caixa\FluxoCaixa.Data\bin\Debug\net8.0\FluxoCaixa.Data.runtimeconfig.json
+C:\gitRey\fluxo-caixa\FluxoCaixa.Data\obj\Debug\net8.0\FluxoCaixa.Data.genruntimeconfig.cache
