@@ -1,6 +1,0 @@
-@fluxo_caixa_HostAddress = http://localhost:5062
-
-GET {{fluxo_caixa_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

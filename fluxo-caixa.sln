@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fluxo-caixa", "fluxo-caixa.csproj", "{1D415319-BB32-45C2-AB30-A8E39FAF1FC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluxoCaixa.Api", "FluxoCaixa.Api\FluxoCaixa.Api.csproj", "{1D415319-BB32-45C2-AB30-A8E39FAF1FC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluxoCaixa.Domain", "FluxoCaixa.Domain\FluxoCaixa.Domain.csproj", "{BCD79E88-00DA-4571-9A74-CCE3E2919C0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoCaixa.Data", "FluxoCaixa.Data\FluxoCaixa.Data.csproj", "{EC8E04AF-7F7E-426E-9D7F-329CA6670690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoCaixa.Business", "FluxoCaixa.Business\FluxoCaixa.Business.csproj", "{CDD88F54-15B6-4CA8-8E4A-ADF96DC659F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{1D415319-BB32-45C2-AB30-A8E39FAF1FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D415319-BB32-45C2-AB30-A8E39FAF1FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D415319-BB32-45C2-AB30-A8E39FAF1FC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCD79E88-00DA-4571-9A74-CCE3E2919C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD79E88-00DA-4571-9A74-CCE3E2919C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD79E88-00DA-4571-9A74-CCE3E2919C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD79E88-00DA-4571-9A74-CCE3E2919C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8E04AF-7F7E-426E-9D7F-329CA6670690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8E04AF-7F7E-426E-9D7F-329CA6670690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8E04AF-7F7E-426E-9D7F-329CA6670690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8E04AF-7F7E-426E-9D7F-329CA6670690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD88F54-15B6-4CA8-8E4A-ADF96DC659F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD88F54-15B6-4CA8-8E4A-ADF96DC659F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD88F54-15B6-4CA8-8E4A-ADF96DC659F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD88F54-15B6-4CA8-8E4A-ADF96DC659F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

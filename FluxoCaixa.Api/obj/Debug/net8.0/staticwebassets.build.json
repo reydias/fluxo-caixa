@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eNu4h9JBqo0C4WRxaK1H51Fv6iV2wI9V9HAkqKTPS4E=",
+  "Source": "FluxoCaixa.Api",
+  "BasePath": "_content/FluxoCaixa.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
