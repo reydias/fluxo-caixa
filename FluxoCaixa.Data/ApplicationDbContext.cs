@@ -15,4 +15,9 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<Lancamento>().HasKey(l => l.Id);
         modelBuilder.Entity<ConsolidadoDiario>().HasNoKey(); // Projeção apenas para leitura
     }
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+        return base.SaveChangesAsync(cancellationToken);
+    }
 }
