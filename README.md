@@ -16,24 +16,31 @@ Este projeto fornece uma API para gerenciar lançamentos financeiros, utilizando
    git clone <URL_DO_REPOSITORIO>
    cd <nome_do_repositorio>
 
-Execução
-Inicie o banco de dados PostgreSQL:
+2. **Execução**
+ a. Inicie o banco de dados PostgreSQL:
 
+```bash
 docker-compose up -d postgres-db
-Aplique as Migrações:
 
+ b. Aplique as Migrações:
+
+```bash
 dotnet ef database update --project FluxoCaixa.Data --startup-project FluxoCaixa.Api
-Inicie a API:
 
+ c. Inicie a API:
+
+```bash
 docker-compose up -d fluxocaixa-api
-Acessando a Aplicação
+
+3. **Acessando a Aplicação**
 A aplicação estará acessível através da interface gráfica do Nitro no endereço: http://localhost:5000/graphql/
 
-Exemplos de Queries e Mutações
+**Exemplos de Queries e Mutações**
 Você pode utilizar as seguintes queries e mutações para interagir com a API:
 
-Listar Lançamentos:
+- Listar Lançamentos:
 
+```bash
 query {
   lancamentos {
     id
@@ -44,8 +51,9 @@ query {
   }
 }
 
-Adicionar Lançamento:
+- Adicionar Lançamento:
 
+```bash
 mutation {
   addLancamento(input: {
     tipo: "C",
@@ -60,25 +68,31 @@ mutation {
     descricao
   }
 }
-Consultar Consolidado Diário:
 
+- Consultar Consolidado Diário:
+
+```bash
 query{
   consolidadoDiario{
     data
     saldo
   }
 }
-Remover Lançamento: (Substitua "a3968016-ea5a-455f-a0e8-334c250b87e1" pelo ID do lançamento)
 
+- Remover Lançamento: (Substitua "a3968016-ea5a-455f-a0e8-334c250b87e1" pelo ID do lançamento)
+
+```bash
 mutation{
   removeLancamento(id:"a3968016-ea5a-455f-a0e8-334c250b87e1")
   {
     id
   }
 }
-Parando a Aplicação
+
+4. **Parando a Aplicação**
 Para parar os containers do Docker, execute:
 
+```bash
 docker-compose down
 
 
