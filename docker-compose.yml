@@ -34,8 +34,4 @@ services:
       - postgres-db
     networks:
       - fluxocaixa-network
-    command: >
-      /bin/bash -c "
-      dotnet ef database update &&
-      dotnet app.dll
-      "
+  
