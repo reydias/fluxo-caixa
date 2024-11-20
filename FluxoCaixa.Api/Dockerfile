@@ -23,3 +23,6 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "FluxoCaixa.Api.dll"]
+
+# Configure a aplicação para rodar com o PostgreSQL
+ENV ASPNETCORE_URLS=http://+:80

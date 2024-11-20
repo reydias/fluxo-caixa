@@ -5,9 +5,9 @@ namespace FluxoCaixa.Business
 {
     public class LancamentoBusiness : ILancamentoBusiness
     {
-        private readonly LancamentoRepository _repository;
+        private readonly ILancamentoRepository _repository;
 
-        public LancamentoBusiness(LancamentoRepository repository)
+        public LancamentoBusiness(ILancamentoRepository repository)
         {
             _repository = repository;
         }
@@ -25,7 +25,24 @@ namespace FluxoCaixa.Business
             return lancamento;
         }
 
+        public async Task<Lancamento> RemoveLancamentoAsync(Guid lancamentoId)
+        {
+            var lancamento = await _repository.GetByIdAsync(lancamentoId);
+            if (lancamento == null)
+            {
+                throw new KeyNotFoundException("Lançamento not found.");
+            }
+
+            await _repository.RemoveAsync(lancamento);
+            return lancamento;
+        }
+
         public async Task<IEnumerable<ConsolidadoDiario>> GetConsolidadoDiarioAsync()
             => await _repository.GetConsolidadoDiarioAsync();
+
+        public async Task<Lancamento> GetLancamentoByIdAsync(Guid lancamentoId)
+        {
+            return await _repository.GetByIdAsync(lancamentoId);
+        }
     }
 }

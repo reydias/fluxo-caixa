@@ -14,6 +14,10 @@ namespace FluxoCaixa.Api
 
         public async Task<Lancamento> AddLancamento(LancamentoInput input)
         {
+            if(input.Tipo != "C" && input.Tipo != "D")
+            {
+                throw new ArgumentException("O tipo deve ser 'C' para Crédito ou 'D' para Débito.");
+            }
             var novoLancamento = new Lancamento
             {
                 Id = Guid.NewGuid(),
@@ -23,6 +27,11 @@ namespace FluxoCaixa.Api
                 Descricao = input.Descricao
             };
             return await _lancamentoBusiness.AddLancamentoAsync(novoLancamento);
+        }
+
+        public async Task<Lancamento> RemoveLancamento(Guid id)
+        {
+            return await _lancamentoBusiness.RemoveLancamentoAsync(id);
         }
     }
 }

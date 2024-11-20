@@ -7,12 +7,10 @@ using HotChocolate.Execution;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configura��es do servi�o
-builder.Services.AddDbContext<ApplicationDbContext>((sp, options) =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
-    .EnableSensitiveDataLogging()
-    .LogTo(Console.WriteLine, LogLevel.Information));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<LancamentoRepository>();
+builder.Services.AddScoped<ILancamentoRepository, LancamentoRepository>();
 builder.Services.AddScoped<ILancamentoBusiness, LancamentoBusiness>();
 builder.Services.AddScoped<LancamentoQuery>();
 builder.Services.AddScoped<LancamentoMutation>();

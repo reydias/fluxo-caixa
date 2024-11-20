@@ -1,3 +1,9 @@
 .vs/
 bin/
 obj/
+*.obj
+*.bin
+/bin/
+/obj/
+FluxoCaixa.Api/core
+FluxoCaixa.Api/obj
