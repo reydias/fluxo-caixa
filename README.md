@@ -53,7 +53,7 @@ query {
   }
 }
 ```
-- Adicionar Lançamento:
+- Adicionar Lançamento (tipo C ou D, respectivamente, Crédito ou Débito):
 
 ```bash
 mutation {
