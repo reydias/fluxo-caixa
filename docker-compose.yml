@@ -1,0 +1,37 @@
+
+networks:
+  fluxocaixa-network:
+    driver: bridge
+
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    environment:
+        POSTGRES_USER: fluxocaixa
+        POSTGRES_PASSWORD: 12345678
+        POSTGRES_DB: fluxocaixa
+    ports:
+      - "5432:5432"
+    networks:
+      - fluxocaixa-network
+
+  fluxocaixa-api:
+    build:
+      context: .
+      dockerfile: FluxoCaixa.Api/Dockerfile
+    container_name: FluxoCaixa.Api
+    restart: always
+    environment:
+      DATABASE_HOST: postgres-db
+      DATABASE_USER: fluxocaixa
+      DATABASE_PASSWORD: 12345678
+      DATABASE_NAME: fluxocaixa
+    ports:
+      - "80:8080"
+    depends_on:
+      - postgres-db
+    networks:
+      - fluxocaixa-network
+  
